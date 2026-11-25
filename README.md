@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# A3 Motors · site
 
-## Getting Started
+Site da A3 Motors (Piracicaba), feito em Next.js 15. O estoque vem direto do site atual da loja (a3motorsweb.com.br): carros, fotos, preços, marcas e itens são lidos de lá e atualizados sozinhos a cada 10 minutos. Ninguém precisa cadastrar nada duas vezes.
 
-First, run the development server:
+## O que tem
+
+- Capa com o M3 e as letras A3 MOTORS; ao rolar, o vídeo da câmera entrando na loja.
+- Em destaque e Estoque, com filtro por tipo e marca e ordenação por preço ou data.
+- Página própria para cada veículo (`/veiculo/nome-do-carro`): fotos em cartas, ficha, itens, simulador de parcela e WhatsApp.
+- A loja (fotos reais), contato, rota no Waze.
+- Está marcado como `noindex`: o Google não indexa enquanto for prévia. Para publicar de verdade, tire o `robots` em `src/app/layout.tsx`.
+
+## Rodar no computador
+
+Precisa do Node.js 20 ou mais novo.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Publicar (Vercel, grátis)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Suba esta pasta para um repositório no GitHub (veja abaixo).
+2. Em vercel.com, entre com o GitHub, clique em "Add New → Project" e escolha o repositório.
+3. Não precisa mudar nada: clique em Deploy. Em um minuto sai um link `https://…vercel.app`.
 
-## Learn More
+## Subir para o GitHub
 
-To learn more about Next.js, take a look at the following resources:
+Crie um repositório vazio em github.com/new (sem README) e, dentro desta pasta:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+git remote add origin https://github.com/SEU-USUARIO/a3-motors.git
+git push -u origin main
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Onde mexer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| O quê | Arquivo |
+| --- | --- |
+| Telefone, WhatsApp, endereço, Instagram | `src/lib/store.ts` |
+| Cores, fontes, vidro | `src/app/globals.css` |
+| Capa e animação | `src/components/Hero.tsx` |
+| Estoque e filtros | `src/components/Inventory.tsx` |
+| Página do carro | `src/components/VehicleView.tsx` |
+| Leitura do estoque da A3 | `src/lib/inventory.ts` |
+| Textos e fotos da loja | `src/components/Store.tsx` |

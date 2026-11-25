@@ -1,0 +1,257 @@
+{
+ "vehicles": [
+  {
+   "id": 36774,
+   "slug": "honda-fit-1-5-ex-flex",
+   "title": "Honda Fit 1.5 Ex Flex",
+   "publishedAt": "2026-11-25",
+   "brand": "Honda",
+   "brandSlug": "honda",
+   "type": "carros",
+   "price": 81900,
+   "year": "2020",
+   "km": 41053,
+   "color": "Branco",
+   "fuel": "Flex",
+   "gearbox": "Automático",
+   "description": "Novidade! Honda Fit EX 2020 Motor 1.5 Flex de 116 cv Câmbio CVT de 7 Marchas. Revisada na Honda! Laudo Cautelar Aprovado!",
+   "highlights": [
+    "Revisada na Honda",
+    "Laudo cautelar aprovado"
+   ],
+   "cover": "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307845.jpg",
+   "images": [
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307845.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307844.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307843.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307842.jpg"
+   ],
+   "isPreparing": false
+  },
+  {
+   "id": 36683,
+   "slug": "porsche-macan-2-0-turbo-gasolina-2",
+   "title": "Porsche Macan 2.0 Turbo Gasolina",
+   "publishedAt": "2026-11-23",
+   "brand": "Porsche",
+   "brandSlug": "porsche",
+   "type": "carros",
+   "price": 344900,
+   "year": "2021",
+   "km": 36857,
+   "color": "Preto",
+   "fuel": "Gasolina",
+   "gearbox": "Automático",
+   "description": "Novidade! Porsche Macan 2.0 2021 Motor 2.0 Turbo Gasolina de 252 cv Câmbio Automático PDK de 7 Marchas Tração Integral AWD. Revisada na Porsche! Laudo Cautelar Aprovado!",
+   "highlights": [
+    "Revisada na Porsche",
+    "Laudo cautelar aprovado"
+   ],
+   "cover": "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306729.jpg",
+   "images": [
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306729.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306728.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306727.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306726.jpg"
+   ],
+   "isPreparing": false
+  },
+  {
+   "id": 36648,
+   "slug": "volkswagen-jetta-2-0-tsi-highline-200-cv",
+   "title": "Volkswagen Jetta 2.0 Tsi Highline 200 Cv",
+   "publishedAt": "2026-11-21",
+   "brand": "Volkswagen",
+   "brandSlug": "volkswagen",
+   "type": "carros",
+   "price": 69900,
+   "year": "2012",
+   "km": 154268,
+   "color": "Preto",
+   "fuel": "Gasolina",
+   "gearbox": "Automático",
+   "description": "Novidade! Volkswagen Jetta Highline 2012 Motor 2.0 Turbo Gasolina de 200 cv Câmbio Automático DSG de 6 Marchas. Laudo Cautelar Aprovado!",
+   "highlights": [
+    "Laudo cautelar aprovado"
+   ],
+   "cover": "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306681-1.jpg",
+   "images": [
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306681-1.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306680-1.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306679-1.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC306678-1.jpg"
+   ],
+   "isPreparing": false
+  },
+  {
+   "id": 36603,
+   "slug": "ram-rampage-2-0-laramie-turbo-diesel-4x4",
+   "title": "Ram Rampage 2.0 Laramie Turbo Diesel 4×4",
+   "publishedAt": "2026-11-21",
+   "brand": "RAM",
+   "brandSlug": "ram",
+   "type": "carros",
+   "price": 189900,
+   "year": "2023–2024",
+   "km": 41907,
+   "color": "Cinza",
+   "fuel": "Diesel",
+   "gearbox": "Automático",
+   "description": "Novidade! Rampage Laramie 4x4 2024 Motor 2.0 Turbo Diesel 170 cv Câmbio Automático de 9 Marchas.",
+   "highlights": [],
+   "cover": "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307164.jpg",
+   "images": [
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307164.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307162.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307161.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307160.jpg"
+   ],
+   "isPreparing": false
+  },
+  {
+   "id": 36600,
+   "slug": "ram-2500-6-7-laramie-turbo-diesel-4x4",
+   "title": "Ram 2500 6.7 Laramie Turbo Diesel 4×4",
+   "publishedAt": "2026-11-21",
+   "brand": "RAM",
+   "brandSlug": "ram",
+   "type": "carros",
+   "price": 194900,
+   "year": "2012",
+   "km": 202976,
+   "color": "Prata",
+   "fuel": "Diesel",
+   "gearbox": "Automático",
+   "description": "",
+   "highlights": [],
+   "cover": null,
+   "images": [],
+   "isPreparing": true
+  },
+  {
+   "id": 36534,
+   "slug": "mercedes-benz-cla-200-1-3-mhev-amg-line",
+   "title": "Mercedes-Benz Cla 200 1.3 Mhev Amg Line",
+   "publishedAt": "2026-11-21",
+   "brand": "Mercedes-Benz",
+   "brandSlug": "mercedes-benz",
+   "type": "carros",
+   "price": 234900,
+   "year": "2023–2024",
+   "km": 39155,
+   "color": "Cinza",
+   "fuel": "Gasolina",
+   "gearbox": "Automático",
+   "description": "Novidade! Mercedes-Benz CLA 200 AMG Line 2024 Motor 1.3 Turbo Gasolina Híbrido Leve de 163 cv. Revisada na Mercedes-Benz!",
+   "highlights": [
+    "Revisada na Mercedes-Benz"
+   ],
+   "cover": "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307224-1.jpg",
+   "images": [
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307224-1.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307223-1.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307222-1.jpg",
+    "https://a3motorsweb.com.br/wp-content/uploads/2026/11/MC307221-1.jpg"
+   ],
+   "isPreparing": false
+  }
+ ],
+ "brands": [
+  {
+   "id": 5,
+   "name": "BMW",
+   "slug": "bmw",
+   "count": 13
+  },
+  {
+   "id": 49,
+   "name": "RAM",
+   "slug": "ram",
+   "count": 6
+  },
+  {
+   "id": 33,
+   "name": "Volkswagen",
+   "slug": "volkswagen",
+   "count": 6
+  },
+  {
+   "id": 19,
+   "name": "Mercedes-Benz",
+   "slug": "mercedes-benz",
+   "count": 5
+  },
+  {
+   "id": 2,
+   "name": "Toyota",
+   "slug": "toyota",
+   "count": 5
+  },
+  {
+   "id": 29,
+   "name": "Audi",
+   "slug": "audi",
+   "count": 3
+  },
+  {
+   "id": 23,
+   "name": "Honda",
+   "slug": "honda",
+   "count": 2
+  },
+  {
+   "id": 15,
+   "name": "Porsche",
+   "slug": "porsche",
+   "count": 2
+  },
+  {
+   "id": 28,
+   "name": "Chevrolet",
+   "slug": "chevrolet",
+   "count": 1
+  },
+  {
+   "id": 3,
+   "name": "Fiat",
+   "slug": "fiat",
+   "count": 1
+  },
+  {
+   "id": 64,
+   "name": "GWM",
+   "slug": "gwm",
+   "count": 1
+  },
+  {
+   "id": 37,
+   "name": "Honda Motos",
+   "slug": "honda-motos",
+   "count": 1
+  },
+  {
+   "id": 20,
+   "name": "Jeep",
+   "slug": "jeep",
+   "count": 1
+  },
+  {
+   "id": 32,
+   "name": "Land Rover",
+   "slug": "land-rover",
+   "count": 1
+  },
+  {
+   "id": 40,
+   "name": "Sea-Doo",
+   "slug": "sea-doo",
+   "count": 1
+  },
+  {
+   "id": 48,
+   "name": "Triumph",
+   "slug": "triumph",
+   "count": 1
+  }
+ ]
+}
