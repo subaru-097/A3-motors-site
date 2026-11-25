@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   description:
     "Carros e motos seminovos de alto padrão em Piracicaba. BMW, Porsche, Mercedes-Benz, Audi e mais, revisados e com laudo cautelar.",
   robots: { index: false, follow: false },
+  metadataBase: new URL("https://a3-motors-site-9u7n.vercel.app"),
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "A3 Motors",
+    title: "A3 Motors · Seminovos de alto padrão em Piracicaba",
+    description: "Conheça o estoque da A3 Motors.",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "A3 Motors" }],
+  },
 };
 
 export const viewport: Viewport = {
