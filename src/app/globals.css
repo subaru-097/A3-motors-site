@@ -217,3 +217,20 @@
   background-clip: text;
   color: transparent;
 }
+
+/* Se o JavaScript falhar, a tela de entrada some sozinha e não prende o visitante. */
+.loader {
+  animation: loader-failsafe 0s 12s forwards;
+}
+@keyframes loader-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sweep {
+    display: none;
+  }
+}

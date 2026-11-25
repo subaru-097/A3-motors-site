@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Vehicle } from "@/lib/inventory";
+import { stockImage } from "@/lib/image";
 import { formatKm } from "@/lib/store";
 import { Plate } from "./Plate";
 
@@ -12,7 +13,7 @@ export function VehicleCard({ vehicle, href, priority = false }: VehicleCardProp
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-[21px] bg-graphite">
           {vehicle.cover ? (
             <img
-              src={vehicle.cover}
+              src={stockImage(vehicle.cover, 640)}
               alt={vehicle.title}
               loading={priority ? "eager" : "lazy"}
               decoding="async"

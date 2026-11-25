@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Inventory } from "@/components/Inventory";
+import { Loader } from "@/components/Loader";
 import { PreviewRouter } from "@/components/PreviewRouter";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Contact, Footer, Store } from "@/components/Store";
@@ -13,6 +14,7 @@ export default async function Home() {
 
   return (
     <>
+      <Loader />
       <SmoothScroll />
       <Header />
       <main>

@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Vehicle } from "@/lib/inventory";
-import { PREVIEW_PREFIX, relatedTo, stockHref } from "@/lib/routes";
+import { PREVIEW_PREFIX, relatedTo } from "@/lib/routes";
 import { Footer } from "./Store";
+import { VehicleTopBar } from "./VehicleTopBar";
 import { VehicleView } from "./VehicleView";
 
 const slugFromHash = () =>
@@ -32,12 +33,7 @@ export function PreviewRouter({ vehicles }: { vehicles: Vehicle[] }) {
 
   return (
     <div ref={pageRef} data-lenis-prevent className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-night">
-      <div className="glass-strong fixed left-1/2 top-3 z-10 flex -translate-x-1/2 items-center gap-4 whitespace-nowrap rounded-full py-2 pl-2 pr-5">
-        <a href={stockHref} className="btn btn-ghost h-10 px-4 text-[14px]">
-          ← Estoque
-        </a>
-        <span className="brand-wordmark font-display text-[15px] tracking-[0.18em]">A3 MOTORS</span>
-      </div>
+      <VehicleTopBar />
       <VehicleView key={vehicle.slug} vehicle={vehicle} related={relatedTo(vehicle, vehicles)} />
       <Footer />
     </div>

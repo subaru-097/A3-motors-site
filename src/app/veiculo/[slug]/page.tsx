@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/Header";
+import { VehicleTopBar } from "@/components/VehicleTopBar";
 import { Footer } from "@/components/Store";
 import { VehicleView } from "@/components/VehicleView";
 import { getInventory, getVehicle } from "@/lib/inventory";
@@ -33,7 +33,7 @@ export default async function VehiclePage({ params }: Params) {
 
   return (
     <>
-      <Header />
+      <VehicleTopBar />
       <main>
         <VehicleView vehicle={vehicle} related={relatedTo(vehicle, vehicles)} />
       </main>

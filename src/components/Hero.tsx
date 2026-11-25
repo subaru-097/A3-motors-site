@@ -9,6 +9,18 @@ import { whatsappLink } from "@/lib/store";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const FRAME_COUNT = 113;
+const FIRST_BATCH = 24;
+
+const reportLoading = (progress: number) => {
+  window.a3LoadProgress = progress;
+  window.dispatchEvent(new CustomEvent("a3:loading", { detail: progress }));
+};
+
+declare global {
+  interface Window {
+    a3LoadProgress?: number;
+  }
+}
 const frameSrc = (index: number, size: "1920" | "1280") =>
   `/hero/frames/${size}/${String(index + 1).padStart(3, "0")}.webp`;
 
@@ -45,14 +57,44 @@ const useFrameSequence = (canvasRef: React.RefObject<HTMLCanvasElement | null>) 
     canvas.width = small ? 1280 : 1920;
     canvas.height = small ? 720 : 1080;
 
-    // Carrega na ordem do scroll: os primeiros quadros chegam antes.
-    frames.current = Array.from({ length: FRAME_COUNT }, (_, index) => {
+    // A tela de carregamento espera as fotos da capa e o começo do vídeo; o resto chega depois, sem disputar banda.
+    const stills = small
+      ? ["/hero/still-bg-1920.webp", "/hero/still-car-1920.webp"]
+      : ["/hero/still-bg-3840.webp", "/hero/still-car-3840.webp"];
+    const total = stills.length + FIRST_BATCH;
+    let loaded = 0;
+    const tick = () => {
+      loaded += 1;
+      reportLoading(loaded / total);
+    };
+    stills.forEach((src) => {
+      const image = new Image();
+      image.onload = tick;
+      image.onerror = tick;
+      image.src = src;
+    });
+
+    const loadFrame = (index: number, onDone?: () => void) => {
       const image = new Image();
       image.decoding = "async";
+      image.onload = () => {
+        if (index === current.current) draw(index);
+        onDone?.();
+      };
+      image.onerror = () => onDone?.();
       image.src = frameSrc(index, size);
-      if (index === current.current) image.onload = () => draw(index);
-      return image;
-    });
+      frames.current[index] = image;
+    };
+
+    frames.current = [];
+    let pending = FIRST_BATCH;
+    for (let index = 0; index < FIRST_BATCH; index++) {
+      loadFrame(index, () => {
+        tick();
+        pending -= 1;
+        if (pending === 0) for (let rest = FIRST_BATCH; rest < FRAME_COUNT; rest++) loadFrame(rest);
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -152,6 +194,28 @@ export function Hero() {
                   <stop offset="0" stopColor="#fff" stopOpacity="0.9" />
                   <stop offset="1" stopColor="#fff" stopOpacity="0" />
                 </radialGradient>
+                {/* Feixe de luz que atravessa as letras de tempos em tempos. */}
+                <linearGradient id="hero-sweep" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="260" y2="250">
+                  <stop offset="0.3" stopColor="#fff" stopOpacity="0" />
+                  <stop offset="0.47" stopColor="#fff" stopOpacity="0.85" />
+                  <stop offset="0.5" stopColor="#fff" stopOpacity="1" />
+                  <stop offset="0.53" stopColor="#fff" stopOpacity="0.85" />
+                  <stop offset="0.7" stopColor="#fff" stopOpacity="0" />
+                  <animateTransform
+                    attributeName="gradientTransform"
+                    type="translate"
+                    values="-360 0; 1320 0; 1320 0"
+                    keyTimes="0; 0.75; 1"
+                    keySplines="0.42 0 0.58 1; 0 0 1 1"
+                    calcMode="spline"
+                    dur="8s"
+                    begin="1.2s"
+                    repeatCount="indefinite"
+                  />
+                </linearGradient>
+                <filter id="hero-sweep-glow" x="-10%" y="-60%" width="120%" height="220%">
+                  <feGaussianBlur stdDeviation="10" />
+                </filter>
                 <filter id="hero-bloom" x="-20%" y="-50%" width="140%" height="200%">
                   <feGaussianBlur stdDeviation="9" />
                 </filter>
@@ -166,6 +230,14 @@ export function Hero() {
                 </g>
                 <text className="hero-a3" x="55" y="250" fill="url(#hero-spec-a3)">A3</text>
                 <text className="hero-motors" x="702" y="247" fill="url(#hero-spec)">MOTORS</text>
+                <g className="hero-sweep" fill="url(#hero-sweep)">
+                  <g filter="url(#hero-sweep-glow)" opacity="0.9">
+                    <text className="hero-a3" x="55" y="250">A3</text>
+                    <text className="hero-motors" x="702" y="247">MOTORS</text>
+                  </g>
+                  <text className="hero-a3" x="55" y="250">A3</text>
+                  <text className="hero-motors" x="702" y="247">MOTORS</text>
+                </g>
               </g>
             </svg>
             <picture>

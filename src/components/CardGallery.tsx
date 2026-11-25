@@ -2,6 +2,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { stockImage } from "@/lib/image";
 
 const VISIBLE_SIDE = 2;
 const SWIPE_THRESHOLD = 40;
@@ -86,7 +87,9 @@ export function CardGallery({ images, title }: CardGalleryProps) {
               }}
             >
               <img
-                src={src}
+                src={stockImage(src, 1920)}
+                srcSet={src.startsWith("http") ? `${stockImage(src, 1080)} 1080w, ${stockImage(src, 1920)} 1920w` : undefined}
+                sizes="(max-width: 700px) 90vw, 800px"
                 alt={isActive ? `${title}, foto ${index + 1} de ${count}` : ""}
                 draggable={false}
                 loading={distance === 0 ? "eager" : "lazy"}
@@ -133,7 +136,7 @@ export function CardGallery({ images, title }: CardGalleryProps) {
                 index === active ? "border-pearl opacity-100" : "border-white/10 opacity-50 hover:opacity-90"
               }`}
             >
-              <img src={src} alt="" loading="lazy" className="size-full object-cover" />
+              <img src={stockImage(src, 256)} alt="" loading="lazy" className="size-full object-cover" />
             </button>
           ))}
         </div>
